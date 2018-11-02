@@ -114,7 +114,7 @@ var result2 = `
 }
 
 /*
-* 接下来变成 Markdown 格式 - 库marked.js
+* 开始写我的简历了，变成markdown格式
 */
 
 `
