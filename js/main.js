@@ -48,7 +48,7 @@ var result = `/*
   }
 html{
     font-size: 16px;
-    background: #A4B2B3;
+    background: #eee;
 }
 #code{
     background: #E28E3D;
@@ -70,10 +70,17 @@ html{
 .token.punctuation{
     color: #F8F8F2;
 }
+/* 加点呼吸效果 */
+#code{
+    animation: breath 0.5s infinite alternate-reverse;
+}
+
 /* 加点3D效果 */
 #code{
-    transform: rotate(360deg); 
+    transform: rotateY(20deg) translateZ(-60px) ;
 }
+
+
 /* 开始介绍我自己了 */
 /* 我需要一张白纸 */
 #code{
@@ -81,6 +88,7 @@ html{
     left: 0;
     width: 50%;
     height: 100%;
+    margin: 6px 20px; 
 }
 #paper{
     position: fixed;
@@ -104,41 +112,10 @@ html{
 var result2 = `
 #paper{
 }
+
 /*
 * 接下来变成 Markdown 格式 - 库marked.js
 */
-
-# 自我简介
-
-我叫 xxx，今年23岁
-2017年毕业于xxxxxxxxxx学校
-学习前端半年
-希望应聘一份前端技术岗位
-
-# 技能介绍
-
-熟悉 Html Css JavaScript
-
-# 项目
-
-1，Canvas画板
-![](/img/4.png)
-预览链接：[https://ranranqi.github.io/canvas-demo-3/index.html](https://ranranqi.github.io/canvas-demo-3/index.html)
-
-2，键盘导航
-![](/img/3.png)
-预览链接： [https://ranranqi.github.io/nav-demo/index.html](https://ranranqi.github.io/nav-demo/index.html)
-
-3，appleStyle轮播
-![](/img/2.png)
-预览链接： [https://ranranqi.github.io/appleStyle-demo/index.html](https://ranranqi.github.io/appleStyle-demo/index.html)
-
-# 联系方式
-
-手机： xxxxxxxx
-QQ: xxxxxxxxx
-Email:xxxxxxx@xx.com
-
 
 `
 var md = `
