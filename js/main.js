@@ -31,7 +31,7 @@ function writeMarkdown(markdown, fn){
 
 function changToMarkdown(fn){
     let domMarkdown = document.querySelector('#paper > .content').innerHTML =
-            marked('# 自我简介\n\n我叫 xxx，今年23岁\n\n2017年毕业于xxxxxxxxxx学校\n\n学习前端半年\n\n希望应聘一份前端技术岗位\n\n# 技能介绍\n\n熟悉Html Css JavaScript\n\n# 项目\n\n1，Canvas画板\n\n![](/img/4.png)\n\n预览链接：[https://ranranqi.github.io/canvas-demo-3/index.html](https://ranranqi.github.io/canvas-demo-3/index.html)\n\n2，键盘导航\n\n![](/img/3.png)\n\n预览链接： [https://ranranqi.github.io/nav-demo/index.html](https://ranranqi.github.io/nav-demo/index.html)\n\n3，appleStyle轮播\n\n![](/img/2.png)\n\n预览链接： [https://ranranqi.github.io/appleStyle-demo/index.html](https://ranranqi.github.io/appleStyle-demo/index.html)\n\n# 联系方式\n\n手机： xxxxxxxx\n\nQQ: xxxxxxxxx\n\nEmail:xxxxxxx@xx.com\n\n\n\nRendered by **marked**.')
+            marked('# 自我简介\n\n我叫 xxx，今年23岁\n\n2017年毕业于xxxxxxxxxx学校\n\n学习前端半年\n\n希望应聘一份前端技术岗位\n\n# 技能介绍\n\n熟悉Html Css JavaScript\n\n# 项目\n\n1，Canvas画板\n\n![](./img/4.png)\n\n预览链接：[https://ranranqi.github.io/canvas-demo-3/index.html](https://ranranqi.github.io/canvas-demo-3/index.html)\n\n2，键盘导航\n\n![](./img/3.png)\n\n预览链接： [https://ranranqi.github.io/nav-demo/index.html](https://ranranqi.github.io/nav-demo/index.html)\n\n3，appleStyle轮播\n\n![](./img/2.png)\n\n预览链接： [https://ranranqi.github.io/appleStyle-demo/index.html](https://ranranqi.github.io/appleStyle-demo/index.html)\n\n# 联系方式\n\n手机： xxxxxxxx\n\nQQ: xxxxxxxxx\n\nEmail:xxxxxxx@xx.com\n\n\n\nRendered by **marked**.')
             domMarkdown.scrollTop = domMarkdown.scrollHeight
             fn.call()
 }
