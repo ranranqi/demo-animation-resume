@@ -1,10 +1,9 @@
-
 /* 把code写到#code和style标签里*/
-function writrCode(prefix, code, fn){
-    let domCode= document.querySelector("#code")
+function writrCode(prefix, code, fn) {
+    let domCode = document.querySelector("#code")
     let n = 0
     let id = setInterval(() => {
-        n += 1 
+        n += 1
         domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css, 'css')
         domCode.scrollTop = domCode.scrollHeight
         styleTag.innerHTML = prefix + code.substring(0, n)
@@ -15,25 +14,25 @@ function writrCode(prefix, code, fn){
     }, 10)
 }
 
-function writeMarkdown(markdown, fn){
+function writeMarkdown(markdown, fn) {
     let domPaper = document.querySelector('#paper > .content')
     let n = 0
     let id = setInterval(() => {
-        n += 1 
+        n += 1
         domPaper.innerHTML = markdown.substring(0, n)
         domPaper.scrollTop = domPaper.scrollHeight
         if (n >= markdown.length) {
             window.clearInterval(id)
             fn.call()
         }
-    },10)
+    }, 10)
 }
 
-function changToMarkdown(fn){
+function changToMarkdown(fn) {
     let domMarkdown = document.querySelector('#paper > .content').innerHTML =
-            marked('# 自我简介\n\n我叫 xxx，今年23岁\n\n2017年毕业于xxxxxxxxxx学校\n\n学习前端半年\n\n希望应聘一份前端技术岗位\n\n# 技能介绍\n\n熟悉Html Css JavaScript\n\n# 项目\n\n1，Canvas画板\n\n![](./img/4.png)\n\n预览链接：[https://ranranqi.github.io/canvas-demo-3/index.html](https://ranranqi.github.io/canvas-demo-3/index.html)\n\n2，键盘导航\n\n![](./img/3.png)\n\n预览链接： [https://ranranqi.github.io/nav-demo/index.html](https://ranranqi.github.io/nav-demo/index.html)\n\n3，appleStyle轮播\n\n![](./img/2.png)\n\n预览链接： [https://ranranqi.github.io/appleStyle-demo/index.html](https://ranranqi.github.io/appleStyle-demo/index.html)\n\n# 联系方式\n\n手机： xxxxxxxx\n\nQQ: xxxxxxxxx\n\nEmail:xxxxxxx@xx.com\n\n\n\nRendered by **marked**.')
-            domMarkdown.scrollTop = domMarkdown.scrollHeight
-            fn.call()
+        marked(md)
+    domMarkdown.scrollTop = domMarkdown.scrollHeight
+    fn.call()
 }
 
 
@@ -119,41 +118,42 @@ var result2 = `
 
 `
 var md = `
-# 标题1
-
-我叫 xxx
-今年20岁
+# 自我简介
+我叫 xxx，今年23岁
+2017年毕业于xxxxxxxxxx学校
 学习前端半年
 希望应聘一份前端技术岗位
-
 # 技能介绍
-
-熟悉 Html Css JavaScript
-
+熟悉Html Css JavaScript
 # 项目
-
-1，苹果风格轮播
-2，Canvas画板
-3，键盘导航
-
+1，Canvas画板
+![](./img/4.png)
+预览链接：[https://ranranqi.github.io/canvas-demo-3/index.html](https://ranranqi.github.io/canvas-demo-3/index.html)
+2，键盘导航
+![](./img/3.png)
+预览链接： [https://ranranqi.github.io/nav-demo/index.html](https://ranranqi.github.io/nav-demo/index.html)
+3，appleStyle轮播
+![](./img/2.png)
+预览链接： [https://ranranqi.github.io/appleStyle-demo/index.html](https://ranranqi.github.io/appleStyle-demo/index.html)
 # 联系方式
 手机： xxxxxxxx
 QQ: xxxxxxxxx
-Email: xxxxxxxxx
+Email:xxxxxxx@xx.com
+Rendered by **marked**.
 
 `
 
-writrCode('', result, ()=>{
-    createPaper(()=>{
-        writrCode(result, result2 ,()=>{
-            writeMarkdown(md,()=>{
-                changToMarkdown()
+writrCode('', result, () => {
+    createPaper(() => {
+        writrCode(result, result2, () => {
+            writeMarkdown(md, () => {
+                changToMarkdown(md)
             })
         })
     })
 })
 
-function createPaper(fn){
+function createPaper(fn) {
     var paper = document.createElement('div')
     paper.id = 'paper'
     var content = document.createElement('pre')
